@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Contoh Halaman Risk Task</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="m-0">Contoh Halaman Risk Task</h5>
+        </div>
+        <div class="card-body">
+            <p>
+                Berikut adalah contoh untuk sebuah ronde di dalam <i>Risk Task</i> dimana Anda harus memilih salah satu
+                dari 2 prospek berisiko berikut.
+            </p>
+            <p>
+                <strong>Prospek A</strong>: Anda akan mendapatkan salah satu payoff yang bersedia berdasarkan
+                probabilitasnya sebagai berikut
+            </p>
+            <ol class="list-group list-group-numbered mb-3">
+                <li class="list-group-item">Payoff 200 token dengan probabilitas 5%</li>
+                <li class="list-group-item">Payoff 150 token dengan probabilitas 90%</li>
+                <li class="list-group-item">Payoff 0 token dengan probabilitas 5%</li>
+            </ol>
+            <p>
+                <strong>Prospek B</strong>: Anda akan mendapatkan salah satu payoff yang bersedia berdasarkan
+                probabilitasnya sebagai berikut
+            </p>
+            <ol class="list-group list-group-numbered mb-3">
+                <li class="list-group-item">Payoff 180 token dengan probabilitas 5%</li>
+                <li class="list-group-item">Payoff 150 token dengan probabilitas 90%</li>
+                <li class="list-group-item">Payoff 20 token dengan probabilitas 5%</li>
+            </ol>
+            <p class="m-0">
+                Klik <strong>’Lanjutkan’</strong> untuk menuju ke contoh selanjutnya jika Anda sudah memahami contoh
+                <i>Risk Task</i> ini.
+            </p>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-primary">
+                <span>Lanjutkan</span>
+                <i class="fa-solid fa-forward ms-1"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}

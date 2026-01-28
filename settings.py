@@ -1,11 +1,12 @@
 from os import environ
 
 SESSION_CONFIGS = [
-    # dict(
-    #     name='public_goods',
-    #     app_sequence=['public_goods'],
-    #     num_demo_participants=3,
-    # ),
+    dict(
+        display_name='Moral Environment',
+        name='moral_environments',
+        app_sequence=['instruction'],
+        num_demo_participants=1,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -32,6 +33,8 @@ ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
-DEMO_PAGE_INTRO_HTML = """ """
+DEMO_PAGE_INTRO_HTML = """
+    Selamat datang di eksperimen kami
+"""
 
 SECRET_KEY = '4515626958046'

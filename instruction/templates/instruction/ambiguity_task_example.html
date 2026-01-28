@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Contoh Halaman Ambiguity Task</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="m-0">Contoh Halaman Ambiguity Task</h5>
+        </div>
+        <div class="card-body">
+            <p>
+                Berikut adalah contoh untuk sebuah ronde di dalam <i>Ambiguity Task</i> dimana Anda harus memilih salah
+                satu dari 2 prospek ambigu berikut.
+            </p>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">
+                    <strong>Situasi</strong>: Terdapat 100 bola berwarna Biru, Merah, dan Kuning di dalam sebuah kotak
+                    tertutup untuk kemudian diambil salah satu secara acak. Tidak ada info mengenai komposisi bola Biru,
+                    Merah, dan Kuning di dalam kotak tersebut.
+                </li>
+                <li class="list-group-item">
+                    <strong>Prospek A</strong>: Anda akan mendapatkan 150 token jika bola Biru yang keluar dari
+                    pengambilan secara acak.
+                </li>
+                <li class="list-group-item">
+                    <strong>Prospek B</strong>: Anda akan mendapatkan 80 token jika bola Merah atau Kuning yang keluar
+                    dari pengambilan secara acak.
+                </li>
+            </ul>
+            <p>
+                Tim peneliti tidak mengetahui komposisi warna bola di dalam kotak tertutup tersebut. Penentuannya murni
+                dilakukan oleh orang lain atau oleh komputer.
+            </p>
+            <p class="m-0">
+                Klik <strong>’Lanjutkan’</strong> untuk menuju ke contoh selanjutnya jika Anda sudah memahami contoh
+                <i>Ambiguity Task</i> ini.
+            </p>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-primary">
+                <span>Lanjutkan</span>
+                <i class="fa-solid fa-forward ms-1"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}
