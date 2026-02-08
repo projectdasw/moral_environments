@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Sesi Latihan Eksperimen</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="m-0">Sesi Latihan Eksperimen</h5>
+        </div>
+        <div class="card-body">
+            <p>
+                Sebelum memasuki sesi utama, kami mengajak Anda untuk mengikuti
+                <strong>Sesi Latihan Eksperimen</strong>. Sesi ini dirancang khusus untuk membantu Anda memahami alur,
+                aturan, serta mekanisme eksperimen secara menyeluruh dalam suasana yang santai dan tanpa tekanan.
+            </p>
+            <p>
+                Manfaatkan sesi latihan ini untuk mengenal tampilan layar, mencoba berbagai pilihan keputusan, serta
+                memahami konsekuensi dari setiap keputusan yang tersedia. Jangan ragu untuk mencoba dan bereksperimen,
+                karena seluruh hasil pada sesi latihan
+                <strong>tidak akan memengaruhi hasil akhir maupun pembayaran yang Anda terima.</strong>
+            </p>
+            <p>
+                Gunakan waktu ini sebaik mungkin agar pengalaman eksperimen Anda berjalan lancar dan optimal. Silahkan
+                klik <strong>Mulai Latihan</strong> untuk memulai sesi latihan.
+            </p>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-success">
+                <i class="fa-solid fa-circle-play me-1"></i>
+                <span>Mulai Latihan</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}

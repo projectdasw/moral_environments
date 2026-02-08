@@ -1,0 +1,28 @@
+.scatter-box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: #1e88e5; /* biru dominan */
+    /*background-color: #000;*/
+    border: 3px solid #1e88e5;
+    margin: 20px auto;
+}
+
+.ball {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.ball.red {
+    background-color: #e53935;
+}
+
+.ball.blue {
+    background-color: #1e88e5;
+}
+
+.ball.yellow {
+    background-color: #fdd835;
+}

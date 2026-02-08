@@ -1,0 +1,94 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Risk Task - Moral Environment</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header d-flex flex-row justify-content-between align-items-center">
+            <h3 class="m-0">Risk Task</h3>
+            <h3 class="m-0">
+                <span class="badge text-bg-primary">Ronde {{ player.round_number }}</span>
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-success text-center">
+                <h4 class="m-0">Silahkan pilih salah satu dari 2 prospek berisiko</h4>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header text-bg-success">
+                            <div class="form-check h4">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                                <label class="form-check-label" for="radioDefault1">
+                                    Prospek A
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4"><canvas id="risk-a"></canvas></div>
+                            <h6 class="card-title text-center">
+                                Anda akan mendapatkan salah satu payoff yang tersedia berdasarkan probabilitas sebagai
+                                berikut:
+                            </h6>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item">
+                                    Payoff 200 token dengan probabilitas 5%
+                                </li>
+                                <li class="list-group-item">
+                                    Payoff 150 token dengan probabilitas 90%
+                                </li>
+                                <li class="list-group-item">
+                                    Payoff 0 token dengan probabilitas 5%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header text-bg-success">
+                            <div class="form-check h4">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2">
+                                <label class="form-check-label" for="radioDefault1">
+                                    Prospek B
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4"><canvas id="risk-b"></canvas></div>
+                            <h6 class="card-title text-center">
+                                Anda akan mendapatkan salah satu payoff yang tersedia berdasarkan probabilitas sebagai
+                                berikut:
+                            </h6>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item">
+                                    Payoff 180 token dengan probabilitas 5%
+                                </li>
+                                <li class="list-group-item">
+                                    Payoff 150 token dengan probabilitas 90%
+                                </li>
+                                <li class="list-group-item">
+                                    Payoff 0 token dengan probabilitas 5%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-success">
+                <i class="fa-solid fa-circle-check me-1"></i>
+                <span>Pilih Prospek terpilih</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'global/risk_task.js' %}"></script>
+{% endblock %}
