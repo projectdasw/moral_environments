@@ -22,7 +22,7 @@ SESSION_CONFIGS = [
             'instruction',
             'risk_task',
             'ambiguity_task',
-            'company_task',
+            # 'company_task',
         ],
         num_demo_participants=1,
     ),
