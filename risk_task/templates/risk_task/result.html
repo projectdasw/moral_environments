@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Result Risk Task - Moral Environment</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="m-0">Hasil Risk Task - Ronde {{ player.round_number }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <th>Angka yang keluar</th>
+                        <th>Prospek yang dipilih</th>
+                        <th>Token yang didapatkan</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ player.angka_keluar }}</td>
+                            <td>{{ player.prospek_terpilih }}</td>
+                            <td>{{ player.hasil_token }} token</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-primary">
+                <span>Lanjut</span>
+                <i class="fa-solid fa-forward ms-1"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}

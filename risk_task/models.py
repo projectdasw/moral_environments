@@ -20,4 +20,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    prospek_terpilih = models.StringField()
+    angka_keluar = models.IntegerField(initial=0)
+    hasil_token = models.IntegerField(initial=0)
