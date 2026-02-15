@@ -9,6 +9,9 @@ class Constants(BaseConstants):
     name_in_url = 'ambiguity_task'
     players_per_group = None
     num_rounds = 1
+    colors = ['Biru', 'Merah', 'Kuning']
+    payoff_A = 150
+    payoff_B = 80
 
 
 class Subsession(BaseSubsession):
@@ -20,4 +23,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    prospek_terpilih = models.StringField()
+    bola_keluar = models.StringField()
+    hasil_token = models.IntegerField(initial=0)

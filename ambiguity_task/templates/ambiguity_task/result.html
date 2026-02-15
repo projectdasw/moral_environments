@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Result Ambiguity Task - Moral Environment</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="m-0">Hasil Ambiguity Task - Ronde {{ player.round_number }}</h3>
+        </div>
+        <div class="card-body">
+            {% if win %}
+                <div class="alert alert-success m-0" role="alert">
+                    <h4 class="alert-heading">
+                        Bola yang keluar adalah bola
+                        {% if player.bola_keluar == "Biru" %}
+                            <strong class="text-primary">{{ player.bola_keluar }}</strong>
+                        {% elif player.bola_keluar == "Merah" %}
+                            <strong class="text-danger">{{ player.bola_keluar }}</strong>
+                        {% else %}
+                            <strong class="text-warning">{{ player.bola_keluar }}</strong>
+                        {% endif %}
+                    </h4>
+                    <p class="fw-bold">Selamat Anda mendapatkan {{ player.hasil_token }} token pada ronde ini</p>
+                    <hr>
+                    <p class="mb-0">
+                        Prospek yang Anda pilih:
+                        {% if player.prospek_terpilih == "prospek-A" %}
+                            <strong>Prospek A - Bola Biru</strong>
+                        {% else %}
+                            <strong>Prospek B - Bola Merah/Kuning</strong>
+                        {% endif %}
+                    </p>
+                </div>
+            {% else %}
+                <div class="alert alert-danger m-0" role="alert">
+                    <h4 class="alert-heading">
+                        Bola yang keluar adalah bola
+                        {% if player.bola_keluar == "Biru" %}
+                            <strong class="text-primary">{{ player.bola_keluar }}</strong>
+                        {% elif player.bola_keluar == "Merah" %}
+                            <strong class="text-danger">{{ player.bola_keluar }}</strong>
+                        {% else %}
+                            <strong class="text-warning">{{ player.bola_keluar }}</strong>
+                        {% endif %}
+                    </h4>
+                    <p class="fw-bold">Anda tidak mendapatkan token pada ronde ini</p>
+                    <hr>
+                    <p class="mb-0">
+                        Prospek yang Anda pilih:
+                        {% if player.prospek_terpilih == "prospek-A" %}
+                            <strong>Prospek A - Bola Biru</strong>
+                        {% else %}
+                            <strong>Prospek B - Bola Merah/Kuning</strong>
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-primary">
+                <span>Lanjut</span>
+                <i class="fa-solid fa-forward ms-1"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}
