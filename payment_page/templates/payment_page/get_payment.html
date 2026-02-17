@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <title>Pembayaran - Moral Environment</title>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="m-0">Pembayaran</h3>
+        </div>
+        <div class="card-body">
+            <h4 class="text-center">Putar untuk dapatkan pembayaran Anda</h4>
+            <div id="animation-box" style="margin-top:30px;">
+
+        <h5>App</h5>
+        <div id="app-box" class="display-5 mt-4">
+        ---
+    </div>
+
+    </div>
+
+    <button id="spin-btn" class="btn btn-warning btn-lg mt-4">
+        🎰 Putar Undian
+    </button>
+            <div class="alert alert-success m-0 w-50 mx-auto" role="alert">
+                <h5 class="text-center">Anda mendapatkan pembayaran dari:</h5>
+                <ul class="list-group">
+                    <li class="list-group-item text-center">
+                        Sesi <strong>[nama_game]</strong> Ronde <strong>[nomor_ronde]</strong>
+                    </li>
+                    <li class="list-group-item text-center">
+                        Token dari sesi ronde tersebut: <strong>[angka]</strong> token
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="otree-btn btn btn-primary">
+                <i class="fa-solid fa-money-bills me-1"></i>
+                <span>Selesaikan Pembayaran</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'global/payment_page.js'%}"></script>
+{% endblock %}
