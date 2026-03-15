@@ -8,62 +8,92 @@
 {% block content %}
     <div class="card">
         <div class="card-header">
-            <h3 class="m-0">Hasil Ambiguity Task - Ronde {{ player.round_number }}</h3>
+            <div class="h3 m-0">Hasil Ambiguity Task - Ronde {{ player.round_number }}</div>
         </div>
         <div class="card-body">
-            {% if win %}
-                <div class="alert alert-success m-0" role="alert">
-                    <h4 class="alert-heading">
-                        Bola yang keluar adalah bola
-                        {% if player.bola_keluar == "Biru" %}
-                            <strong class="text-primary">{{ player.bola_keluar }}</strong>
-                        {% elif player.bola_keluar == "Merah" %}
-                            <strong class="text-danger">{{ player.bola_keluar }}</strong>
-                        {% else %}
-                            <strong class="text-warning">{{ player.bola_keluar }}</strong>
-                        {% endif %}
-                    </h4>
-                    <p class="fw-bold">Selamat Anda mendapatkan {{ player.hasil_token }} token pada ronde ini</p>
-                    <hr>
-                    <p class="mb-0">
-                        Prospek yang Anda pilih:
-                        {% if player.prospek_terpilih == "prospek-A" %}
-                            <strong>Prospek A - Bola Biru</strong>
-                        {% else %}
-                            <strong>Prospek B - Bola Merah/Kuning</strong>
-                        {% endif %}
-                    </p>
+            <div class="alert p-0">
+                            <h4 class="alert-heading">
+                                Bola yang keluar adalah bola
+                                {% if ball == "Biru" %}
+                                    <strong class="text-primary">{% ball %}</strong>
+                                {% elif ball == "Merah" %}
+                                    <strong class="text-danger">{% ball %}</strong>
+                                {% else %}
+                                    <strong class="text-warning">{% ball %}</strong>
+                                {% endif %}
+                            </h4>
+                            <p class="m-0">
+                                {% if payoff > 0 %}
+                                    <h5 class="m-0">Selamat Anda mendapatkan {% payoff %} token pada ronde ini</h5>
+                                {% else %}
+                                    <h3 class="m-0">Anda tidak mendapatkan token pada ronde ini</h3>
+                                {% endif %}
+                            </p>
+                            <hr class="my-2">
+                            <p class="mb-0">
+                                Prospek yang Anda pilih:
+                                {% if choice == "prospek-A" %}
+                                    <strong>Prospek A</strong>
+                                {% else %}
+                                    <strong>Prospek B</strong>
+                                {% endif %}
+                            </p>
+                        </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="m-0">Kotak Bola</h5>
                 </div>
-            {% else %}
-                <div class="alert alert-danger m-0" role="alert">
-                    <h4 class="alert-heading">
-                        Bola yang keluar adalah bola
-                        {% if player.bola_keluar == "Biru" %}
-                            <strong class="text-primary">{{ player.bola_keluar }}</strong>
-                        {% elif player.bola_keluar == "Merah" %}
-                            <strong class="text-danger">{{ player.bola_keluar }}</strong>
-                        {% else %}
-                            <strong class="text-warning">{{ player.bola_keluar }}</strong>
-                        {% endif %}
-                    </h4>
-                    <p class="fw-bold">Anda tidak mendapatkan token pada ronde ini</p>
-                    <hr>
-                    <p class="mb-0">
-                        Prospek yang Anda pilih:
-                        {% if player.prospek_terpilih == "prospek-A" %}
-                            <strong>Prospek A - Bola Biru</strong>
-                        {% else %}
-                            <strong>Prospek B - Bola Merah/Kuning</strong>
-                        {% endif %}
-                    </p>
+                <div class="card-body p-0">
+                    <canvas class="w-100" id="box" style="display:block;"></canvas>
                 </div>
-            {% endif %}
+            </div>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="otree-btn btn btn-primary">
-                <span>Lanjut</span>
-                <i class="fa-solid fa-forward ms-1"></i>
-            </button>
-        </div>
+        <div class="card-footer"></div>
     </div>
+    <script>
+        const canvas = document.getElementById("box");
+        const ctx = canvas.getContext("2d");
+        let blue = {{ blue }};
+        let red = {{ red }};
+        let yellow = {{ yellow }};
+        let resultBall = "{{ ball }}".toLowerCase();
+        let balls = [];
+
+        // menentukan warna yang akan ditampilkan
+        let color;
+        let count;
+
+        if(resultBall === "biru"){
+            color = "blue";
+            count = blue;
+        }
+
+        if(resultBall === "merah"){
+            color = "red";
+            count = red;
+        }
+
+        if(resultBall === "kuning"){
+            color = "yellow";
+            count = yellow;
+        }
+
+        // membuat bola sesuai hasil
+        for(let i=0;i<count;i++){
+            balls.push({
+                x: Math.random()*canvas.width,
+                y: Math.random()*canvas.height,
+                color: color,
+                r:2
+            });
+        }
+
+        // gambar bola
+        balls.forEach(b=>{
+            ctx.beginPath();
+            ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+            ctx.fillStyle=b.color;
+            ctx.fill();
+        });
+    </script>
 {% endblock %}

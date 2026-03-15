@@ -2,7 +2,7 @@ const ctx_risk_a = document.getElementById('risk-a');
 const ctx_risk_b = document.getElementById('risk-b');
 
 new Chart(ctx_risk_a, {
-  type: 'doughnut',
+  type: 'pie',
   data: {
     labels: [
       '200 token prob 5%',
@@ -22,7 +22,7 @@ new Chart(ctx_risk_a, {
   },
 });
 new Chart(ctx_risk_b, {
-  type: 'doughnut',
+  type: 'pie',
   data: {
     labels: [
       '180 token prob 5%',
