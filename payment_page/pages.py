@@ -20,7 +20,7 @@ class info_all_round(Page):
         for p in risk_players:
             risk_data.append({
                 'round_number': p.round_number,
-                'choice': 'Prospek A' if p.prospek_terpilih == 'prospek-A' else 'Prospek B',
+                'prospek_terpilih': 'Prospek A' if p.prospek_terpilih == 'prospek-A' else 'Prospek B',
                 'payoff': p.hasil_token,
             })
 
@@ -39,7 +39,7 @@ class info_all_round(Page):
         for p in ambiguity_players:
             ambiguity_data.append({
                 'round_number': p.round_number,
-                'choice':
+                'prospek_terpilih':
                     'Prospek A (Bola Biru)' if p.prospek_terpilih == 'prospek-A' else 'Prospek B (Bola Merah/Kuning)',
                 'drawn_color': p.bola_keluar,
                 'payoff': p.hasil_token,
