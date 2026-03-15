@@ -1,20 +1,6 @@
 from os import environ
 
 SESSION_CONFIGS = [
-    # dict(
-    #     display_name='Moral Environment',
-    #     name='moral_environments',
-    #     app_sequence=[
-    #         'instruction',
-    #         'risk_task',
-    #         'ambiguity_task',
-    #         'company_task',
-    #         'payment_page',
-    #         'moral_survey',
-    #         'survey_demographic'
-    #     ],
-    #     num_demo_participants=1,
-    # ),
     dict(
         display_name='Moral Environment',
         name='moral_environments',
@@ -25,28 +11,10 @@ SESSION_CONFIGS = [
             # 'company_task',
             # 'payment_page',
             # 'moral_survey',
-            # 'survey_demographic'
-            # 'company_task',
-            # 'moral_survey',
-            # 'payment_page',
             # 'survey_player'
         ],
         num_demo_participants=1,
     ),
-    # dict(
-    #     display_name='Moral Environment',
-    #     name='moral_environments',
-    #     app_sequence=[
-    #         # 'instruction',
-    #         # 'risk_task',
-    #         'ambiguity_task',
-    #         # 'company_task',
-    #         # 'moral_survey',
-    #         # 'payment_page',
-    #         # 'survey_player'
-    #     ],
-    #     num_demo_participants=1,
-    # ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
